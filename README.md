@@ -120,9 +120,7 @@ Si $P_t$ est la position à l'instant t et $P_{t-1}$ est la position à l'instan
 
 $$P_{t+1} = P_t + \alpha (P_t-P_{t-1})$$
 
-### Le problème de l'excès de prédiction
-
-### La correction de la prediction
+### Le problème de l'excès de prédiction et la correction
 
 Lorsqu'une position est exclue et que dans le même temps le comédien décide de changer de trajectoire on se retrouve dans une situation où 
 le filtre prédit une une autre trajectoire différente de celle réellement employée par le comédien. En effet, le filtre se base sur les données enregistrées avant la perte de données, il n'est donc pas étonnant que sa prédiction n'est plus juste. Afin de palier ce problème
