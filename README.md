@@ -124,6 +124,15 @@ $$P_{t+1} = P_t + \alpha (P_t-P_{t-1})$$
 
 ### La correction de la prediction
 
+Lorsqu'une position est exclue et que dans le même temps le comédien décide de changer de trajectoire on se retrouve dans une situation où 
+le filtre prédit une une autre trajectoire différente de celle réellement employée par le comédien. En effet, le filtre se base sur les données enregistrées avant la perte de données, il n'est donc pas étonnant que sa prédiction n'est plus juste. Afin de palier ce problème
+on considère que les données, même si brutes sont plus juste que les données prédites par le filtre. Littéralement, cela se traduit par un nombre limite de prédiction qu'il est possible de faire avant de retourner de force sur les données brutes.
+
+
+![image](https://github.com/yaalexse/fia-tracking/assets/125702546/69666843-0539-4aa9-a754-ce9974dd6108)
+
+Finalement, cette limite permet au filtre de se corriger lorsque la prédiction prend trop la main, empêchant ainsi au système de prédire des positions trop aberrantes.
+
 <img src="assets/correction_prediction.gif" alt="Schéma du système Localino" style="display: block; margin-left: auto; margin-right: auto;">
 
 ### Lissage des données avec EMA
